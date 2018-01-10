@@ -9,7 +9,7 @@ configure do
 end
 $client = Mongo::Client.new([ "localhost" ], :database => "redirects", :max_pool_size => 100, :wait_queue_timeout => 60, :connect_timeout => 30, :socket_timeout => 30)
 Mongo::Logger.logger.level = Logger::FATAL
-
+$redis = Redis.new
 get '/' do
   @latest = $client[:redirects].find.sort({time: -1}).first
   @count = $client[:redirects].count

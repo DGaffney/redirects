@@ -5,3 +5,4 @@ gem 'mongo', '~> 2.2'
 gem 'bson_ext'
 gem "sinatra"
 gem 'rack', '1.6.8'
+gem 'nokogiri', '1.8.1'
