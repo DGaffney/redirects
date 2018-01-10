@@ -1,3 +1,4 @@
+ENV['TZ'] = 'US/Pacific'
 require 'nokogiri'
 require 'open-uri'
 require 'json'
