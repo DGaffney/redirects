@@ -7,7 +7,7 @@ require 'mongo'
 $client = Mongo::Client.new([ "localhost" ], :database => "redirects", :max_pool_size => 100, :wait_queue_timeout => 60, :connect_timeout => 30, :socket_timeout => 30)
 Mongo::Logger.logger.level = Logger::FATAL
 $redis = Redis.new
-latest = "https://permanent-redirect.xyz/pages/1515462547"
+latest = $client[:redirects].find.sort({time: -1}).first["clicked_link"] rescue "https://permanent-redirect.xyz/pages/1515462547"
 click_count = $client[:redirects].find.sort({click_count: -1}).first["click_count"] rescue 0
 data = Nokogiri.parse(open(latest).read());false
 while true
