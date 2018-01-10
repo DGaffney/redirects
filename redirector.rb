@@ -18,7 +18,7 @@ while true
     latest = "https://permanent-redirect.xyz/pages/"+data.search("a")[0].attributes["href"].value.split("/").last
     data = Nokogiri.parse(open(latest).read());false
     latest_id = latest.split("/").last
-    timestamp = Time.parse(data.search("p")[1].text.split("created at ").last)
+    timestamp = Time.parse(data.search("p")[1].text.split("created at ").last.split(".").first)
     click_count += 1
     page_visitors = data.search("img").collect{|x| x.attributes["alt"].text}.join.to_i
     current_status = {time: Time.now, page_visitors: page_visitors, clicked_link: latest, latest_id: latest_id, timestamp: timestamp, click_count: click_count}
