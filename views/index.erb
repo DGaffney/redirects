@@ -16,7 +16,7 @@
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <div class="container">
     <h1>Redirect rectifier - making art bountiful</h1>
-    <p>In response to <a href="https://donaldhanson.net/">Donald Hanson's <a href="https://permanent-redirect.xyz/">redirector project</a>, a selenium Chrome instance in python is constantly running on a Raspberry Pi to constantly identify the most current page at which the artwork is currently available. Whenever it rediscovers this art, it holds for 20 seconds to allow any visitor to this page to view the artwork. As of now, the machine has clicked on at least <%= @count %> links, and has just viewed <a href="<%= @latest["clicked_link"] %>">this page</a> - click here to view the art, it should only take two or three clicks to view it.</p>
+    <p>In response to <a href="https://donaldhanson.net/">Donald Hanson's <a href="https://permanent-redirect.xyz/">redirector project</a>, a selenium Chrome instance in python is constantly running on a Raspberry Pi to constantly identify the most current page at which the artwork is currently available. Whenever it rediscovers this art, it holds for 20 seconds to allow any visitor to this page to view the artwork. As of now, the machine has clicked on at least <%= @count %> links, and has just viewed <a href="<%= @latest["clicked_link"] %>">this page</a>, created at <%= @latest["time"].strftime("%B %d, %Y at %H:%M:%S PST") %> - click here to view the art, it should only take two or three clicks to view it.</p>
     <h2>Click Stats</h2>
     <div id="chart_div"></div>
     <script type="text/javascript">
