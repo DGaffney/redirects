@@ -1,13 +1,12 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    bson (1.12.5)
-    bson_ext (1.12.5)
-      bson (~> 1.12.5)
+    bson (4.2.2)
+    bson_ext (1.5.1)
     coderay (1.1.2)
     method_source (0.9.0)
-    mongo (1.12.5)
-      bson (= 1.12.5)
+    mongo (2.4.3)
+      bson (>= 4.2.1, < 5.0.0)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -26,7 +25,7 @@ PLATFORMS
 
 DEPENDENCIES
   bson_ext
-  mongo
+  mongo (~> 2.2)
   pry
   rack (= 1.6.8)
   redis (= 3.3.0)
